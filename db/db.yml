@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  db2:
+    image: mysql/mysql-server:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: GroovyGurus
+      MYSQL_DATABASE: master
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "43306:3306"
+  phpmyadmin2:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    depends_on:
+      - db2
+    environment:
+      PMA_HOST: db2
+      PMA_USER: root
+      PMA_PASSWORD: GroovyGurus
+    ports:
+      - "8084:80"
+volumes:
+  db_data:

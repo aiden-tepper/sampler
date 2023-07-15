@@ -1,0 +1,173 @@
+.ring {
+  position: relative;
+  --pointerleft: 11%;
+  --pointertop: 11%;
+  --pointerdeg: -45deg;
+  width: 15vmin;
+  height: 15vmin;
+  background-image: radial-gradient(red 0, red 50%, transparent 50%, transparent 100%), radial-gradient(green 0, green 50%, transparent 50%, transparent 100%), radial-gradient(white 0, white 60%, transparent 60%), conic-gradient(orange 0, green 130deg, white 130deg, white 230deg, red 230deg, orange 360deg);
+  background-size: 11% 11%, 11% 11%, 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 9.2% 82.3%, 90.8% 82.3%, center center, center center;
+  border-radius: 50%;
+  border-style: none;
+}
+
+.ring::after {
+  position: absolute;
+  content: '';
+  width: 5%;
+  height: 15%;
+  left: var(--pointerleft);
+  top: var(--pointertop);
+  transform: rotate(var(--pointerdeg));
+  border-style: solid;
+  border-width: 0.5vmin;
+  border-radius: 2vmin;
+  background-color: white;
+}
+
+.speed {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  color: gray;
+}
+
+.speed .number {
+  font-size: 6vw;
+}
+
+.speed .units {
+  font-size: 3vw;
+}
+
+.samplerButton {
+  background-color: #AAAAAA;
+  border: solid;
+  width: 80px;
+  height: 80px;
+  border-width: thin;
+  border-radius: 2px;
+  margin:2px;
+}
+
+.btn-square {
+  width: 100px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: 100px !important;
+  margin: 2px;
+  padding: 10px;
+}
+
+#samplerButtons {
+  margin: 0;
+}
+
+#sampler {
+  float: left;
+  width:48%;
+  height:500px;
+}
+
+.sampleListing {
+  border-style:solid;
+  border-width: 1px;
+  margin:0px;
+  padding:0px;
+  text-align: left;
+
+}
+
+.sampleListingButton {
+  padding:2px;
+}
+
+#sampleList {
+  width:45%;
+  height:500px;
+  float: right;
+  margin:0px;
+}
+
+.verticalLine {
+  border-left: 1px solid black;
+  height: 800px;
+  float: left;
+}
+
+.App-sample-list {
+  justify-content: left;
+}
+
+.Library-content {
+  display: flex;
+}
+.Library-menu {
+  text-align: center;
+}
+.left-half {
+  width: 30%;
+  text-align: center;
+}
+
+.right-half {
+  width: 70%;
+  align-items: center;
+  text-align: center;
+}
+
+
+.Library-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
